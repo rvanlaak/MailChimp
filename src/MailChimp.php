@@ -84,10 +84,11 @@ class MailChimp
      * Sets the MailChimp API key and request headers.
      * @param string $apiKey the MailChimp API key
      */
-    public function __construct($apiKey)
+    public function __construct($apiKey, Client $client = null)
     {
         $this->setApiKey($apiKey);
         $this->setHeaders($this->getDefaultHeaders());
+        $this->client = $client;
     }
 
     /**
